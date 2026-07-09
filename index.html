@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✦ 𝙰𝙽𝙹𝙰𝙽 ʬ 合 — WhatsApp Pairing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.2;
+            animation: float 18s infinite ease-in-out;
+        }
+
+        .orb:nth-child(1) {
+            width: 450px;
+            height: 450px;
+            background: #00ff88;
+            top: -15%;
+            left: -15%;
+            animation-delay: 0s;
+        }
+
+        .orb:nth-child(2) {
+            width: 380px;
+            height: 380px;
+            background: #00c9a7;
+            bottom: -15%;
+            right: -15%;
+            animation-delay: -6s;
+        }
+
+        .orb:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            background: #008866;
+            top: 60%;
+            left: 60%;
+            animation-delay: -12s;
+        }
+
+        .orb:nth-child(4) {
+            width: 200px;
+            height: 200px;
+            background: #ffd700;
+            top: 20%;
+            right: 20%;
+            animation-delay: -3s;
+            opacity: 0.1;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+            25% {
+                transform: translate(100px, -60px) scale(1.15) rotate(90deg);
+            }
+            50% {
+                transform: translate(-50px, 80px) scale(0.85) rotate(180deg);
+            }
+            75% {
+                transform: translate(-120px, -40px) scale(1.08) rotate(270deg);
+            }
+        }
+
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: rise 8s infinite ease-in;
+            opacity: 0;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 25%; animation-delay: 1.5s; width: 2px; height: 2px; }
+        .particle:nth-child(3) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(4) { left: 55%; animation-delay: 4.5s; width: 4px; height: 4px; }
+        .particle:nth-child(5) { left: 70%; animation-delay: 2s; }
+        .particle:nth-child(6) { left: 85%; animation-delay: 5.5s; width: 2px; height: 2px; }
+        .particle:nth-child(7) { left: 15%; animation-delay: 6.5s; }
+        .particle:nth-child(8) { left: 50%; animation-delay: 7.5s; width: 3px; height: 3px; }
+        .particle:nth-child(9) { left: 75%; animation-delay: 1s; }
+        .particle:nth-child(10) { left: 90%; animation-delay: 4s; }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 520px;
+            padding: 20px;
+        }
+
+        /* Brand Logo */
+        .brand-section {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .brand-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 2px;
+            text-shadow: 0 0 40px rgba(0, 255, 136, 0.5);
+            animation: glow 2s infinite ease-in-out;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(0, 255, 136, 0.8), 0 0 80px rgba(0, 255, 136, 0.4);
+            }
+        }
+
+        .brand-subtitle {
+            font-size: 10px;
+            color: #666;
+            letter-spacing: 3px;
+            margin-top: 2px;
+        }
+
+        /* Card */
+        .card {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
+            padding: 35px 28px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+            animation: slideUp 0.7s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo-ring {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00ff88, #008866);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            animation: ringPulse 2.5s infinite ease-in-out;
+            box-shadow: 0 0 40px rgba(0, 255, 136, 0.3), 0 0 80px rgba(0, 255, 136, 0.1);
+            position: relative;
+        }
+
+        .logo-ring::before {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 255, 136, 0.2);
+            animation: ringExpand 2.5s infinite ease-in-out;
+        }
+
+        .logo-ring::after {
+            content: '';
+            position: absolute;
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            animation: ringExpand 2.5s infinite ease-in-out 0.5s;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 60px rgba(0, 255, 136, 0.5);
+            }
+        }
+
+        @keyframes ringExpand {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        .logo-section h1 {
+            color: #fff;
+            font-size: 20px;
+            margin-top: 18px;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-section p {
+            color: #666;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* Input Group */
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #999;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .phone-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Country Select */
+        .country-select-wrap {
+            position: relative;
+            min-width: 135px;
+        }
+
+        .country-select {
+            width: 100%;
+            padding: 15px 35px 15px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            transition: all 0.3s ease;
+        }
+
+        .country-select:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .country-select:focus {
+            border-color: #00ff88;
+            box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.06);
+        }
+
+        .country-select option {
+            background: #111;
+            color: #fff;
+            padding: 12px;
+        }
+
+        .country-select-wrap::after {
+            content: '▾';
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #00ff88;
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        /* Phone Input */
+        .phone-input-wrap {
+            flex: 1;
+            position: relative;
+        }
+
+        .phone-input-wrap input {
+            width: 100%;
+            padding: 15px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .phone-input-wrap input:focus {
+            border-color: #00ff88;
+            box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.06);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .phone-input-wrap input::placeholder {
+            color: #333;
+        }
+
+        /* Button */
+        .btn-pair {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #00ff88, #008866);
+            border: none;
+            border-radius: 14px;
+            color: #000;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-pair::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .btn-pair:hover::before {
+            opacity: 1;
+            animation: shimmer 0.8s ease;
+        }
+
+        @keyframes shimmer {
+            from {
+                left: -100%;
+            }
+            to {
+                left: 100%;
+            }
+        }
+
+        .btn-pair:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-pair:active {
+            transform: scale(0.96);
+        }
+
+        .btn-pair:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-pair .spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .btn-pair.loading .spinner {
+            display: inline-block;
+        }
+
+        /* Result Card */
+        .result-card {
+            margin-top: 22px;
+            padding: 25px;
+            background: rgba(0, 255, 136, 0.04);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 18px;
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .result-card.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .code-label {
+            color: #666;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .code-display {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: #00ff88;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 16px;
+            border-radius: 14px;
+            font-family: 'Courier New', 'SF Mono', monospace;
+            animation: codePop 0.6s ease-out;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+        }
+
+        @keyframes codePop {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .result-card .instruction {
+            color: #888;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 16px;
+            line-height: 1.8;
+        }
+
+        .result-card .instruction strong {
+            color: #00ff88;
+        }
+
+        .copy-btn {
+            width: 100%;
+            margin-top: 12px;
+            padding: 13px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .copied-msg {
+            display: none;
+            color: #00ff88;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 8px;
+            animation: fadeIn 0.3s;
+        }
+
+        /* Error Card */
+        .error-card {
+            margin-top: 16px;
+            padding: 15px;
+            background: rgba(255, 50, 50, 0.06);
+            border: 1px solid rgba(255, 50, 50, 0.25);
+            border-radius: 14px;
+            color: #ff4444;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            20% {
+                transform: translateX(-10px);
+            }
+            40% {
+                transform: translateX(10px);
+            }
+            60% {
+                transform: translateX(-6px);
+            }
+            80% {
+                transform: translateX(6px);
+            }
+        }
+
+        /* Status Indicator */
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: statusBlink 1.5s infinite;
+        }
+
+        .status-dot.online {
+            background: #00ff88;
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+        }
+
+        @keyframes statusBlink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 18px;
+            color: #333;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .footer .brand {
+            color: #00ff88;
+            font-weight: 700;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 500px) {
+            .card {
+                padding: 25px 18px;
+                border-radius: 22px;
+            }
+
+            .phone-row {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .country-select-wrap {
+                min-width: 100%;
+            }
+
+            .code-display {
+                font-size: 36px;
+                letter-spacing: 6px;
+            }
+
+            .brand-name {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Brand -->
+        <div class="brand-section">
+            <div class="brand-name">✦ 𝙰𝙽𝙹𝙰𝙽 ʬ 合</div>
+            <div class="brand-subtitle">PAIRING SYSTEM</div>
+        </div>
+
+        <!-- Card -->
+        <div class="card">
+            <!-- Logo -->
+            <div class="logo-section">
+                <div class="logo-ring">💠</div>
+                <h1>WhatsApp Pairing</h1>
+                <p><span class="status-dot online"></span> Multi-Device Server Active</p>
+            </div>
+
+            <!-- Country Code -->
+            <div class="input-group">
+                <label>🌍 Select Country</label>
+                <div class="phone-row">
+                    <div class="country-select-wrap">
+                        <select class="country-select" id="countrySelect" onchange="updatePlaceholder()">
+                            <option value="93">🇦🇫 Afghanistan +93</option>
+                            <option value="355">🇦🇱 Albania +355</option>
+                            <option value="213">🇩🇿 Algeria +213</option>
+                            <option value="376">🇦🇩 Andorra +376</option>
+                            <option value="244">🇦🇴 Angola +244</option>
+                            <option value="54">🇦🇷 Argentina +54</option>
+                            <option value="374">🇦🇲 Armenia +374</option>
+                            <option value="61">🇦🇺 Australia +61</option>
+                            <option value="43">🇦🇹 Austria +43</option>
+                            <option value="994">🇦🇿 Azerbaijan +994</option>
+                            <option value="973">🇧🇭 Bahrain +973</option>
+                            <option value="880">🇧🇩 Bangladesh +880</option>
+                            <option value="375">🇧🇾 Belarus +375</option>
+                            <option value="32">🇧🇪 Belgium +32</option>
+                            <option value="501">🇧🇿 Belize +501</option>
+                            <option value="229">🇧🇯 Benin +229</option>
+                            <option value="975">🇧🇹 Bhutan +975</option>
+                            <option value="591">🇧🇴 Bolivia +591</option>
+                            <option value="387">🇧🇦 Bosnia +387</option>
+                            <option value="267">🇧🇼 Botswana +267</option>
+                            <option value="55">🇧🇷 Brazil +55</option>
+                            <option value="673">🇧🇳 Brunei +673</option>
+                            <option value="359">🇧🇬 Bulgaria +359</option>
+                            <option value="226">🇧🇫 Burkina Faso +226</option>
+                            <option value="257">🇧🇮 Burundi +257</option>
+                            <option value="855">🇰🇭 Cambodia +855</option>
+                            <option value="237">🇨🇲 Cameroon +237</option>
+                            <option value="1">🇨🇦 Canada +1</option>
+                            <option value="236">🇨🇫 Central African Rep +236</option>
+                            <option value="235">🇹🇩 Chad +235</option>
+                            <option value="56">🇨🇱 Chile +56</option>
+                            <option value="86">🇨🇳 China +86</option>
+                            <option value="57">🇨🇴 Colombia +57</option>
+                            <option value="242">🇨🇬 Congo +242</option>
+                            <option value="243">🇨🇩 Congo (DRC) +243</option>
+                            <option value="506">🇨🇷 Costa Rica +506</option>
+                            <option value="225">🇨🇮 Côte d'Ivoire +225</option>
+                            <option value="385">🇭🇷 Croatia +385</option>
+                            <option value="53">🇨🇺 Cuba +53</option>
+                            <option value="357">🇨🇾 Cyprus +357</option>
+                            <option value="420">🇨🇿 Czech Republic +420</option>
+                            <option value="45">🇩🇰 Denmark +45</option>
+                            <option value="253">🇩🇯 Djibouti +253</option>
+                            <option value="1-809">🇩🇴 Dominican Rep +1-809</option>
+                            <option value="593">🇪🇨 Ecuador +593</option>
+                            <option value="20">🇪🇬 Egypt +20</option>
+                            <option value="503">🇸🇻 El Salvador +503</option>
+                            <option value="240">🇬🇶 Equatorial Guinea +240</option>
+                            <option value="291">🇪🇷 Eritrea +291</option>
+                            <option value="372">🇪🇪 Estonia +372</option>
+                            <option value="251">🇪🇹 Ethiopia +251</option>
+                            <option value="679">🇫🇯 Fiji +679</option>
+                            <option value="358">🇫🇮 Finland +358</option>
+                            <option value="33">🇫🇷 France +33</option>
+                            <option value="241">🇬🇦 Gabon +241</option>
+                            <option value="220">🇬🇲 Gambia +220</option>
+                            <option value="995">🇬🇪 Georgia +995</option>
+                            <option value="49">🇩🇪 Germany +49</option>
+                            <option value="233">🇬🇭 Ghana +233</option>
+                            <option value="30">🇬🇷 Greece +30</option>
+                            <option value="502">🇬🇹 Guatemala +502</option>
+                            <option value="224">🇬🇳 Guinea +224</option>
+                            <option value="592">🇬🇾 Guyana +592</option>
+                            <option value="509">🇭🇹 Haiti +509</option>
+                            <option value="504">🇭🇳 Honduras +504</option>
+                            <option value="852">🇭🇰 Hong Kong +852</option>
+                            <option value="36">🇭🇺 Hungary +36</option>
+                            <option value="354">🇮🇸 Iceland +354</option>
+                            <option value="91" selected>🇮🇳 India +91</option>
+                            <option value="62">🇮🇩 Indonesia +62</option>
+                            <option value="98">🇮🇷 Iran +98</option>
+                            <option value="964">🇮🇶 Iraq +964</option>
+                            <option value="353">🇮🇪 Ireland +353</option>
+                            <option value="972">🇮🇱 Israel +972</option>
+                            <option value="39">🇮🇹 Italy +39</option>
+                            <option value="1-876">🇯🇲 Jamaica +1-876</option>
+                            <option value="81">🇯🇵 Japan +81</option>
+                            <option value="962">🇯🇴 Jordan +962</option>
+                            <option value="7">🇰🇿 Kazakhstan +7</option>
+                            <option value="254">🇰🇪 Kenya +254</option>
+                            <option value="965">🇰🇼 Kuwait +965</option>
+                            <option value="996">🇰🇬 Kyrgyzstan +996</option>
+                            <option value="856">🇱🇦 Laos +856</option>
+                            <option value="371">🇱🇻 Latvia +371</option>
+                            <option value="961">🇱🇧 Lebanon +961</option>
+                            <option value="266">🇱🇸 Lesotho +266</option>
+                            <option value="231">🇱🇷 Liberia +231</option>
+                            <option value="218">🇱🇾 Libya +218</option>
+                            <option value="423">🇱🇮 Liechtenstein +423</option>
+                            <option value="370">🇱🇹 Lithuania +370</option>
+                            <option value="352">🇱🇺 Luxembourg +352</option>
+                            <option value="853">🇲🇴 Macau +853</option>
+                            <option value="389">🇲🇰 Macedonia +389</option>
+                            <option value="261">🇲🇬 Madagascar +261</option>
+                            <option value="265">🇲🇼 Malawi +265</option>
+                            <option value="60">🇲🇾 Malaysia +60</option>
+                            <option value="960">🇲🇻 Maldives +960</option>
+                            <option value="223">🇲🇱 Mali +223</option>
+                            <option value="356">🇲🇹 Malta +356</option>
+                            <option value="222">🇲🇷 Mauritania +222</option>
+                            <option value="230">🇲🇺 Mauritius +230</option>
+                            <option value="52">🇲🇽 Mexico +52</option>
+                            <option value="373">🇲🇩 Moldova +373</option>
+                            <option value="976">🇲🇳 Mongolia +976</option>
+                            <option value="382">🇲🇪 Montenegro +382</option>
+                            <option value="212">🇲🇦 Morocco +212</option>
+                            <option value="258">🇲🇿 Mozambique +258</option>
+                            <option value="95">🇲🇲 Myanmar +95</option>
+                            <option value="264">🇳🇦 Namibia +264</option>
+                            <option value="977">🇳🇵 Nepal +977</option>
+                            <option value="31">🇳🇱 Netherlands +31</option>
+                            <option value="64">🇳🇿 New Zealand +64</option>
+                            <option value="505">🇳🇮 Nicaragua +505</option>
+                            <option value="227">🇳🇪 Niger +227</option>
+                            <option value="234">🇳🇬 Nigeria +234</option>
+                            <option value="850">🇰🇵 North Korea +850</option>
+                            <option value="47">🇳🇴 Norway +47</option>
+                            <option value="968">🇴🇲 Oman +968</option>
+                            <option value="92">🇵🇰 Pakistan +92</option>
+                            <option value="970">🇵🇸 Palestine +970</option>
+                            <option value="507">🇵🇦 Panama +507</option>
+                            <option value="675">🇵🇬 Papua New Guinea +675</option>
+                            <option value="595">🇵🇾 Paraguay +595</option>
+                            <option value="51">🇵🇪 Peru +51</option>
+                            <option value="63">🇵🇭 Philippines +63</option>
+                            <option value="48">🇵🇱 Poland +48</option>
+                            <option value="351">🇵🇹 Portugal +351</option>
+                            <option value="974">🇶🇦 Qatar +974</option>
+                            <option value="40">🇷🇴 Romania +40</option>
+                            <option value="7">🇷🇺 Russia +7</option>
+                            <option value="250">🇷🇼 Rwanda +250</option>
+                            <option value="966">🇸🇦 Saudi Arabia +966</option>
+                            <option value="221">🇸🇳 Senegal +221</option>
+                            <option value="381">🇷🇸 Serbia +381</option>
+                            <option value="65">🇸🇬 Singapore +65</option>
+                            <option value="421">🇸🇰 Slovakia +421</option>
+                            <option value="386">🇸🇮 Slovenia +386</option>
+                            <option value="252">🇸🇴 Somalia +252</option>
+                            <option value="27">🇿🇦 South Africa +27</option>
+                            <option value="82">🇰🇷 South Korea +82</option>
+                            <option value="34">🇪🇸 Spain +34</option>
+                            <option value="94">🇱🇰 Sri Lanka +94</option>
+                            <option value="249">🇸🇩 Sudan +249</option>
+                            <option value="597">🇸🇷 Suriname +597</option>
+                            <option value="268">🇸🇿 Swaziland +268</option>
+                            <option value="46">🇸🇪 Sweden +46</option>
+                            <option value="41">🇨🇭 Switzerland +41</option>
+                            <option value="963">🇸🇾 Syria +963</option>
+                            <option value="886">🇹🇼 Taiwan +886</option>
+                            <option value="992">🇹🇯 Tajikistan +992</option>
+                            <option value="255">🇹🇿 Tanzania +255</option>
+                            <option value="66">🇹🇭 Thailand +66</option>
+                            <option value="228">🇹🇬 Togo +228</option>
+                            <option value="1-868">🇹🇹 Trinidad & Tobago +1-868</option>
+                            <option value="216">🇹🇳 Tunisia +216</option>
+                            <option value="90">🇹🇷 Turkey +90</option>
+                            <option value="993">🇹🇲 Turkmenistan +993</option>
+                            <option value="256">🇺🇬 Uganda +256</option>
+                            <option value="380">🇺🇦 Ukraine +380</option>
+                            <option value="971">🇦🇪 UAE +971</option>
+                            <option value="44">🇬🇧 United Kingdom +44</option>
+                            <option value="1">🇺🇸 United States +1</option>
+                            <option value="598">🇺🇾 Uruguay +598</option>
+                            <option value="998">🇺🇿 Uzbekistan +998</option>
+                            <option value="58">🇻🇪 Venezuela +58</option>
+                            <option value="84">🇻🇳 Vietnam +84</option>
+                            <option value="967">🇾🇪 Yemen +967</option>
+                            <option value="260">🇿🇲 Zambia +260</option>
+                            <option value="263">🇿🇼 Zimbabwe +263</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="input-group">
+                <label>📱 WhatsApp Number</label>
+                <div class="phone-row">
+                    <div class="phone-input-wrap">
+                        <input
+                            type="tel"
+                            id="phoneInput"
+                            placeholder="Enter phone number"
+                            autocomplete="off"
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="btn-pair" id="pairBtn" onclick="generatePairCode()">
+                <span class="spinner"></span>
+                <span class="btn-text">⚡ GET PAIRING CODE</span>
+            </button>
+
+            <!-- Error -->
+            <div class="error-card" id="errorCard"></div>
+
+            <!-- Result -->
+            <div class="result-card" id="resultCard">
+                <div class="code-label">🔐 YOUR PAIRING CODE</div>
+                <div class="code-display" id="codeDisplay">--------</div>
+                <button class="copy-btn" onclick="copyCode()">📋 COPY CODE TO CLIPBOARD</button>
+                <p class="copied-msg" id="copiedMsg">✅ Code copied successfully!</p>
+                <p class="instruction">
+                    <strong>Step 1:</strong> Open WhatsApp<br>
+                    <strong>Step 2:</strong> Settings → <strong>Linked Devices</strong><br>
+                    <strong>Step 3:</strong> Tap <strong>"Link a Device"</strong><br>
+                    <strong>Step 4:</strong> Enter the 8-digit code above
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Powered by <span class="brand">✦ 𝙰𝙽𝙹𝙰𝙽 ʬ 合</span> • Multi-Device Pairing
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = 'https://whatbot-telegram-insta-production.up.railway.app/pair';
+
+        function updatePlaceholder() {
+            const select = document.getElementById('countrySelect');
+            const code = select.value;
+            document.getElementById('phoneInput').placeholder = 'Phone number (+' + code + ')';
+        }
+
+        async function generatePairCode() {
+            const countrySelect = document.getElementById('countrySelect');
+            const phoneInput = document.getElementById('phoneInput');
+            const pairBtn = document.getElementById('pairBtn');
+            const errorCard = document.getElementById('errorCard');
+            const resultCard = document.getElementById('resultCard');
+            const codeDisplay = document.getElementById('codeDisplay');
+
+            let countryCode = countrySelect.value.trim();
+            let phone = phoneInput.value.trim();
+
+            // Validation
+            if (!phone) {
+                showError('❌ Please enter a WhatsApp phone number');
+                shakeElement(phoneInput);
+                return;
+            }
+
+            // Clean number — remove spaces, dashes, brackets
+            phone = phone.replace(/[\s\-\+\(\)]/g, '');
+
+            // Remove leading zeros
+            phone = phone.replace(/^0+/, '');
+
+            if (phone.length < 4) {
+                showError('❌ Phone number too short. Enter a valid number.');
+                shakeElement(phoneInput);
+                return;
+            }
+
+            // Build full number: country code + phone number
+            const fullNumber = countryCode + phone;
+
+            console.log('📡 Pairing number:', fullNumber);
+            console.log('🔗 API URL:', API_BASE + '/' + fullNumber);
+
+            // Reset UI
+            errorCard.style.display = 'none';
+            resultCard.classList.remove('show');
+            pairBtn.classList.add('loading');
+            pairBtn.disabled = true;
+            document.querySelector('.btn-text').textContent = '🔄 Connecting to server...';
+
+            try {
+                const apiUrl = API_BASE + '/' + fullNumber;
+
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                console.log('📥 Response status:', response.status);
+
+                const data = await response.json();
+                console.log('📦 Response data:', data);
+
+                if (response.ok && data.code) {
+                    // Success!
+                    codeDisplay.textContent = String(data.code).trim();
+                    resultCard.classList.add('show');
+                    resultCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    pulseCode();
+                } else if (data.status === 'timeout' || (data.message && data.message.includes('timeout'))) {
+                    showError('⏰ Pairing session expired. Please try again.');
+                } else if (data.status === 'already_paired' || (data.message && data.message.includes('already'))) {
+                    showError('📱 This WhatsApp number is already paired!');
+                } else {
+                    const errMsg = data.message || data.error || 'Unknown server error';
+                    showError('❌ Failed: ' + errMsg);
+                }
+            } catch (err) {
+                console.error('❌ Fetch error:', err);
+                showError('🔌 Connection failed. Server might be offline or CORS issue.');
+            } finally {
+                pairBtn.classList.remove('loading');
+                pairBtn.disabled = false;
+                document.querySelector('.btn-text').textContent = '⚡ GET PAIRING CODE';
+            }
+        }
+
+        function showError(msg) {
+            const errorCard = document.getElementById('errorCard');
+            errorCard.textContent = msg;
+            errorCard.style.display = 'block';
+            setTimeout(() => { errorCard.style.display = 'none'; }, 6000);
+        }
+
+        function shakeElement(el) {
+            el.style.animation = 'none';
+            el.offsetHeight;
+            el.style.animation = 'shake 0.5s ease';
+            setTimeout(() => { el.style.animation = ''; }, 500);
+        }
+
+        function pulseCode() {
+            const cd = document.getElementById('codeDisplay');
+            cd.style.transform = 'scale(1.1)';
+            setTimeout(() => { cd.style.transform = 'scale(1)'; }, 300);
+        }
+
+        function copyCode() {
+            const code = document.getElementById('codeDisplay').textContent;
+            const msg = document.getElementById('copiedMsg');
+            if (!code || code === '--------') return;
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(() => {
+                    msg.style.display = 'block';
+                    setTimeout(() => { msg.style.display = 'none'; }, 2500);
+                }).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
+            }
+
+            function fallbackCopy() {
+                const ta = document.createElement('textarea');
+                ta.value = code;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                msg.style.display = 'block';
+                setTimeout(() => { msg.style.display = 'none'; }, 2500);
+            }
+        }
+
+        // Enter key trigger
+        document.getElementById('phoneInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') generatePairCode();
+        });
+
+        // Init
+        window.addEventListener('load', () => {
+            updatePlaceholder();
+            document.getElementById('phoneInput').focus();
+        });
+    </script>
+</body>
+</html>
